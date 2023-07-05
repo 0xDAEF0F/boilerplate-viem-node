@@ -1,0 +1,37 @@
+{
+  "name": "boilerplate ethereum watcher",
+  "version": "1.0.0",
+  "description": "",
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
+  },
+  "scripts": {
+    "build": "tsup",
+    "build-clean": "rimraf 'node_modules' 'dist' && npm install && npm run build",
+    "start": "npm run build && node dist/index.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "generate-abis": "wagmi generate"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [],
+  "author": "0xdaef0f@proton.me",
+  "license": "undefined",
+  "devDependencies": {
+    "@types/node": "^18.16.2",
+    "@wagmi/cli": "^0.1.15",
+    "prettier": "^2.8.8",
+    "tsup": "^6.7.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "rimraf": "^5.0.0",
+    "viem": "^0.3.16"
+  }
+}
