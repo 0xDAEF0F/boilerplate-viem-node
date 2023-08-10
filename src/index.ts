@@ -1,8 +1,11 @@
-// import { publicClient } from './lib/provider';
-// import { configObject } from './lib/environmentConfig';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+import { publicClient } from './provider';
 
 async function main() {
-  console.log('Hello, world!');
+  const latestBlock = await publicClient.getBlockNumber();
+  console.log(`latest block: ${latestBlock}`);
 }
 
 main();

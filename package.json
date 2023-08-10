@@ -12,17 +12,18 @@
   },
   "scripts": {
     "build": "tsup",
-    "build-clean": "rimraf 'node_modules' 'dist' && npm install && npm run build",
-    "start": "npm run build && node dist/index.js",
+    "clean": "rimraf 'node_modules' 'dist' && npm install && npm run build",
+    "start": "node dist/index.js",
     "format": "prettier --write \"src/**/*.ts\"",
-    "generate-abis": "wagmi generate"
+    "abigen": "wagmi generate",
+    "dev": "tsup src/index.ts --watch --onSuccess \"node dist/index.js\""
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "keywords": [],
   "author": "0xdaef0f@proton.me",
-  "license": "undefined",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.16.2",
     "@wagmi/cli": "^0.1.15",
